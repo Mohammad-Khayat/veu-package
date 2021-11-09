@@ -1,8 +1,4 @@
-import cars from "./cars";
-import data from "./data";
-import categories from "./categories";
+ import adminModule from './adminModule'
 export default {
-  cars,
-  data,
-  categories,
+ adminModule
 };

@@ -40,7 +40,7 @@ label{
   font-family: 'Tajawal', sans-serif !important;
 }
 body{
-  background-color: #f5f5f5 !important;
+  background-color: #fafafa !important;
 }
 </style>
 

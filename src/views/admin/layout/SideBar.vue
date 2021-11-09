@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "@/assets/_custom.scss";
+@import "@/assets/sass/_custom.scss";
 .admin-sidebar {
   transition: 0.3s ease-in-out;
   position: fixed;

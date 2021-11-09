@@ -5,7 +5,7 @@ import bootstrapVue from "bootstrap-vue";
 import store from "./store";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
-import "./assets/_custom.scss";
+import "./assets/sass/_custom.scss";
 import './global-components'
 import "@braid/vue-formulate/themes/snow/snow.scss";
 Vue.config.productionTip = false;

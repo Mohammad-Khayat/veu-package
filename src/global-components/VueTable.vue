@@ -32,7 +32,7 @@ export default {
 
 
 <style lang="scss">
-@import '@/assets/_custom.scss';
+@import '@/assets/sass/_custom.scss';
 
 .vue-good-table-scope{
     overflow: hidden;

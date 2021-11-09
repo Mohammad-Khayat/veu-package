@@ -1,6 +1,8 @@
 <template>
-  <div>
+  <div class="vue-file-component">
+    <label for="vfile" v-if="label" class="mr-1 mb-1">{{label}}</label>
     <FormulateInput
+      id="vfile"
       @input="handleInput"
       type="image"
       class="formulate"
@@ -12,6 +14,7 @@
 
 <script>
 export default {
+  props:['label'],
   data() {
     return {
       filesList: null,
@@ -51,6 +54,10 @@ export default {
 </script>
 
 <style lang="scss">
+.vue-file-component{
+  label{
+    font-size: .9rem;
+  }
 .formulate-input-element {
   max-width: 100% !important;
 }
@@ -76,5 +83,6 @@ export default {
     position: absolute !important;
     right: 65px !important;
   }
+}
 }
 </style>

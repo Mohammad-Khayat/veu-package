@@ -23,6 +23,7 @@
     "core-js": "^3.6.5",
     "dat.gui": "^0.7.7",
     "formulate": "^2.0.6",
+    "jwt-decode": "^3.1.2",
     "popper.js": "^1.16.1",
     "three": "^0.134.0",
     "vee-validate": "^3.4.13",

@@ -8,7 +8,10 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import VueGoodTablePlugin from 'vue-good-table';
 import 'vue-good-table/dist/vue-good-table.css'
 import {
-   faEllipsisVertical,
+  // faTrashUndo,
+  faTrashRestore,
+  faArrowRight,
+  faEllipsisVertical,
   faTimes,
   faBuilding,
   faPlus,
@@ -30,6 +33,8 @@ import {
   faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
+  faTrashRestore,
+  faArrowRight,
   faListUl,
   faEllipsisVertical,
   faTimesCircle,

@@ -22,12 +22,12 @@ const routes = [
   {
     path: "/login",
     name: "login",
-    component: () => import("../views/auth/Login.vue"),
+    component: () => import("@/views/admin/auth/Login.vue"),
   },
   {
     path: "/register",
     name: "register",
-    component: () => import("../views/auth/Register.vue"),
+    component: () => import("@/views/admin/auth/Register.vue"),
   },
 ];
 
@@ -35,5 +35,9 @@ const router = new VueRouter({
   mode: "history",
   routes,
 });
-
+// router.beforeEach((to, from, next) => {
+//   if (to.name !== 'Login' && !isLogedIn()) next({ name: 'Login' })
+//   if(to.name =='Login' && isLogedIn()) next({name:'admin'})
+//   next()
+// })
 export default router;

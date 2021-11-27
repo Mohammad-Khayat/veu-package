@@ -8,7 +8,7 @@
        />
   </div>
 </template>
-        // :search-options="{enabled: true}"
+      <!-- :search-options="{enabled: true}" -->
 
 <script>
 export default {

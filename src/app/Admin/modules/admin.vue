@@ -4,8 +4,8 @@
       <side-bar ref="sideBar" @toggle="getSideSize"></side-bar>
     </div>
 
-    <div class="main p-0 m-0" :class="{ 'main-fluid': closed }">
-      <navbar class="shadow-sm rounded"></navbar>
+    <div class="main bg-light-theme p-0 m-0" :class="{ 'main-fluid': closed }">
+      <navbar class="rounded"></navbar>
       <bread-crumb class="mt-2">
         <router-view name="actions"> </router-view>
       </bread-crumb>
@@ -15,9 +15,9 @@
 </template>
 
 <script>
-import SideBar from "@/views/admin/layout/SideBar.vue";
-import Navbar from "./layout/NavBar.vue";
-import BreadCrumb from "@/views/admin/layout/BreadCrumb.vue";
+import SideBar from "../layout/SideBar.vue";
+import Navbar from "../layout/NavBar.vue";
+import BreadCrumb from "../layout/BreadCrumb.vue";
 export default {
   components: {
     Navbar,
@@ -48,11 +48,24 @@ export default {
   }
 
   .main {
-    height: 100%;
+    height: 100vh;
+    overflow: auto;
     position: absolute;
     width: calc(100% - 270px);
     left: 0;
+    top: 0;
     transition: 0.3s;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: #fafafa !important;
+    height: 100%;
+     min-height: 100vh;
+    z-index: 10;
+    box-shadow: 15px 0 15px -14px #111 !important;
+
+
+
+
   }
   .main-fluid {
     width: calc(100% - 78px);

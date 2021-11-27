@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import ActionBtn from './ActionBtn.vue'
 import InputImage from "@/global-components/InputImage.vue";
 import VueModal from "@/global-components/VueModal";
 import VueSelect from "@/global-components/VueSelect";
@@ -63,3 +64,4 @@ Vue.component("input-image", InputImage);
 Vue.component("vue-modal", VueModal);
 Vue.component("vue-select",  VueSelect);
 Vue.component("vue-table",  VueTable);
+Vue.component("Action",  ActionBtn);

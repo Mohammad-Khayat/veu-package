@@ -1,5 +1,6 @@
 <template>
-  <div class="side admin-sidebar shadow  " id :class="{ closed: closed }">
+<div class="bg-dark-theme sidebar-background">
+  <div class="side admin-sidebar    " id :class="{ closed: closed }">
     <div class="py-4">
       <div
         class="
@@ -13,7 +14,7 @@
       >
         <div class="brand">
           <b-img src="/media/logos/logo.svg" height="35px"> </b-img>
-          <span class="m-0 mt-1" style="font-size:20px;">اسم الشركة</span>
+          <span class="m-0 mt-1 text-main-light" style="font-size:20px;">اسم الشركة</span>
         </div>
 
         <div class="drawer">
@@ -39,14 +40,16 @@
           :to="item.path"
           class="my-2"
         >
-          <fa :icon="item.icon" class="ml-2 text-primary" />
-          <span class="text-main-dark">
+          <fa :icon="item.icon" class="ml-2 text-g1" />
+          <span :class="'text-g1'">
             {{ item.name }}
           </span>
         </b-nav-item>
       </div>
     </ul>
   </div>
+</div>
+
 </template>
 
 <script>
@@ -66,17 +69,26 @@ export default {
 </script>
 
 <style lang="scss">
+.sidebar-background{
+    display: flex;
+    align-items: center;
+z-index: 0;
+width: 100%;
+min-height: 100vh;
+}
 @import "@/assets/sass/_custom.scss";
 .admin-sidebar {
   transition: 0.3s ease-in-out;
   position: fixed;
-  height: 100%;
-  width: 270px;
+  height: 94vh !important;
+   width: 270px;
   opacity: 0.8;
   backdrop-filter: blur(5px);
+  background-color: $darkTheme;
   overflow: auto;
   overflow-x: hidden;
    label {
+    white-space: nowrap;
     font-size: 12px;
     height: 20px;
   }
@@ -86,7 +98,7 @@ export default {
     transition: 0.5s;
   }
   &::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: $darkTheme;
   }
   &::-webkit-scrollbar-thumb {
     background: $primary;
@@ -94,32 +106,54 @@ export default {
   }
   .nav-link {
     color: #fff !important;
-    padding: 18px;
+    position: relative;
+    padding: 1rem;
     transition: 0.3s ease-in-out;
     border-radius: 25px;
+    max-height: 60px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
     &:hover {
-      background-color: #2b2b2b1a;
+  background-color: rgba(0, 0, 0, 0.205) !important;
     }
     span {
       transition: 0.3s;
-      position: absolute;
-      z-index: -1;
     }
+
   }
   .router-link-active {
-    box-shadow: 0px 5px 15px -5px #2b2b2b70;
+  background-color: rgba(0, 0, 0, 0.205) !important;
+     &::after{
+  position: absolute;
+    content: "";
+    height: 50%;
+    width: 3px;
+    border-radius: 25px;
+    background-color: $primary;
+    left: 20px;
+    box-shadow: 0 0 5px 1px $primary;
+    }
   }
   .side-header {
     height: 90px;
   }
 }
 .brand {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
   transition: 0.3s;
+}
+.drawer svg{
+transition: .5s;
 }
 .closed {
   overflow-x: hidden;
   width: 78px;
   .brand {
+
     opacity: 0;
     transform: translateX(150px);
     visibility: hidden;
@@ -132,8 +166,15 @@ export default {
     transition: 0.3s;
     padding: 0 !important;
     text-align: center;
+    white-space: nowrap;
   }
-
+  .router-link-active {
+      &::after{
+    display: none;
+    height: 0;
+    width: 0;
+    }
+  }
   .nav-item {
     padding: 5px !important;
     text-align: center;
@@ -160,6 +201,16 @@ export default {
   &::-webkit-scrollbar {
     width: 5px;
     transition: 0.5s;
+  }
+    &::-webkit-scrollbar {
+  }
+ .drawer svg{
+
+ transform: rotate(180deg);
+ }
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 20px;
   }
 }
 </style>

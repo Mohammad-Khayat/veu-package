@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import admin from "./admin/admin.js";
+import admin from "@/app/Admin/routes";
 
 Vue.use(VueRouter);
 
@@ -12,23 +12,13 @@ const routes = [
   },
   {
     path: "/admin",
-    component: () => import("../views/admin"),
+    component: () => import("@/app/Admin/modules/admin.vue"),
     children: admin,
     meta: {
       pageTitle: "الرئيسية",
     },
   },
 
-  {
-    path: "/login",
-    name: "login",
-    component: () => import("@/views/admin/auth/Login.vue"),
-  },
-  {
-    path: "/register",
-    name: "register",
-    component: () => import("@/views/admin/auth/Register.vue"),
-  },
 ];
 
 const router = new VueRouter({

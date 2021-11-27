@@ -1,6 +1,6 @@
 import axi from "@/libs/axios";
 import djwt from "jwt-decode";
-import router from "@/router/router.js";
+import router from "@/router.js";
 import appConfig from '@/libs/app'
 
 export function isLogedIn(){

@@ -1,17 +1,30 @@
 $white:#fff;
 $black:#000000;
 $mainDark:#212121 ;
-$mainLight:#f5f5f5;
+$darkTheme:#15212e;
+$mainLight:#fafafa;
+$lightTheme:#fafafa;
 $primary: #3FB984;
-
+$secondary: #34495e;
+$light:$mainLight;
 $g1:#eee;
 $g2:#ccc;
 $g3:#b3b3b3;
 $g4:#777;
 
+:root{
+  --main-light:$mainLight;
+  --main-dark:$mainDark;
+  --main-color:$primary;
+  --secondary-color:$secondary;
+}
+
+
  $theme-colors: (
   "main-light":$mainLight,
   "main-dark":$mainDark, 
+  "light-theme":$lightTheme,
+  "dark-theme":$darkTheme,
   "g1":$g1,
   "g2":$g2,
   "g3":$g3,
@@ -36,14 +49,39 @@ $g4:#777;
   .flex-center{
     @extend .flex-center-nf;
     @extend .fit;
-
   }
+
+.align-center{
+display: flex ;
+align-items: center 
+}
+
   .felx-center-col{
     @extend .flex-center-col-nf;
     @extend .fit;
   }
+  .flex-between{
+    display: flex;
+  width: 100%;
+  justify-content: space-between;    
+  }
   .font-bold{
     font-weight: bold !important;
+  }
+  .list-style , .dropdown-menu , .dropdown-menu-right {
+    margin-top: 10px;
+    background: $mainLight !important;
+    padding: 5px !important;
+    border-radius: 20px !important;
+    li{
+      a{
+
+        border-radius: 20px !important;
+      }
+    }
+  }
+  .dropdown-toggle{
+    outline: none !important;
   }
   
   @import "bootstrap/scss/bootstrap";

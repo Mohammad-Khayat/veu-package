@@ -1,4 +1,12 @@
+ const path = require('path')
 module.export = {
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@admin': path.resolve(__dirname, 'src/app/Admin/modules'),
+      },
+    },
+  },
   lintOnSave: true,
   css: {
     loaderOptions: {

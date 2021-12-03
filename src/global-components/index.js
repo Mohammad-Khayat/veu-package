@@ -7,9 +7,10 @@ import VueTable from "@/global-components/VueTable";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import VueGoodTablePlugin from 'vue-good-table';
+import {ValidationObserver,ValidationProvider} from 'vee-validate'
 import 'vue-good-table/dist/vue-good-table.css'
 import {
-  // faTrashUndo,
+  faDoorOpen,
   faTrashRestore,
   faArrowRight,
   faEllipsisVertical,
@@ -34,6 +35,7 @@ import {
   faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
+  faDoorOpen,
   faTrashRestore,
   faArrowRight,
   faListUl,
@@ -65,3 +67,7 @@ Vue.component("vue-modal", VueModal);
 Vue.component("vue-select",  VueSelect);
 Vue.component("vue-table",  VueTable);
 Vue.component("Action",  ActionBtn);
+ 
+
+Vue.component("ValidationObserver",  ValidationObserver);
+Vue.component("ValidationProvider",  ValidationProvider);

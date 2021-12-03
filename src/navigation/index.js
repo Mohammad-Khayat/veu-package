@@ -1,55 +1,56 @@
 export default{
-    'القسم الاول':[
+    'المتجر':[
         {
-            name:'الرابط الأول',
+            name:'الرئيسية',
             icon:'fas fa-home',
-            path:'/admin/home',
+            path:'admin/',
         },
         {
-            name:'الرابط الثاني',
+            name:'مخزن القطع',
             icon:'fas fa-home',
             path:'',
         },
         {
-            name:'الرابط الثالث',
+            name:'السيارات',
             icon:'fas fa-home',
-            path:'',
+            path:'admin/cars',
+        },
+        {
+            name:'التصنيفات',
+            icon:'fas fa-home',
+            path:'admin/categories',
         },
     ],
-    'القسم الثاني':[
+    'المعاملات':[
         {
-            name:'الرابط الأول',
+            name:'الديون',
             icon:'fas fa-home',
             path:'',
         },
         {
-            name:'الرابط الثاني',
+            name:'الزبائن',
             icon:'fas fa-home',
             path:'',
         },
         {
-            name:'الرابط الثالث',
+            name:'المبيعات',
             icon:'fas fa-home',
             path:'',
         },
+   
     ],
-    'القسم الثالث':[
+    'عام':[
         {
-            name:'الرابط الأول',
-            icon:'fas fa-home',
+            name:'الاعدادات',
+            icon:'fas fa-gears',
             path:'',
         },
         {
-            name:'الرابط الثاني',
-            icon:'fas fa-home',
+            name:'تسجيل الخروج',
+            icon:'fas fa-door-open',
             path:'',
         },
-        {
-            name:'الرابط الثالث',
-            icon:'fas fa-home',
-            path:'',
-        },
-    ],
-
+    ]
+  
 
 }

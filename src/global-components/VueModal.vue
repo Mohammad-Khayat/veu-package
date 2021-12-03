@@ -14,7 +14,7 @@
               class="rounded-circle shadow border close-btn"
               @click="close()"
             >
-              <fa icon="fas fa-times" fill="#000"> </fa>
+              <fa icon="fas fa-times" class="text-main-dark"> </fa>
             </b-button>
           </div>
         </template>
@@ -30,23 +30,38 @@
         <template #footer>
           <slot name="footer">
             <b-button
+            v-if="isEdit"
+              variant="primary"
+              @click="
+                $emit('edit');
+                close();
+              "
+              > تعديل <fa icon='fas fa-pen' class="mx-1"></fa>  </b-button
+            >
+            <b-button
+            v-else
               variant="primary"
               @click="
                 $emit('ok');
                 close();
               "
-              >Ok</b-button
+              > اضافة <fa icon='fas fa-plus' class="mx-1"></fa>  </b-button
             >
           </slot>
         </template>
       </b-card>
     </div>
+    <b-btn v-if="!noBtn" variant="primary" class="action-btn" @click="visible=true">
+      <slot name="add">
+        <fa icon='fas fa-plus'></fa>
+      </slot>
+    </b-btn>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["width", "height", "title"],
+  props: ["width", "height", "title","noBtn","isEdit"],
   data() {
     return {
       visible: false,
@@ -57,8 +72,7 @@ export default {
       this.visible = true;
     },
     close() {
-      console.log("close");
-      this.visible = false;
+       this.visible = false;
     },
   },
 };
@@ -101,5 +115,14 @@ export default {
 .close-btn{
 height: 36px;
 width: 36px;
+}
+.action-btn{
+  height: 45px;
+  width: 45px;
+  border-radius: 50% !important;
+  position: fixed;
+  bottom: 12%;
+  right: 3%;
+
 }
 </style>

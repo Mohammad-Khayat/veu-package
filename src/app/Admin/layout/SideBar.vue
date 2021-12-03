@@ -1,6 +1,6 @@
 <template>
   <div class="bg-dark-theme sidebar-background">
-    <div class="side admin-sidebar    " id :class="{ closed: closed }">
+    <div class="side admin-sidebar " id :class="{ closed: closed }">
       <div class="py-1 ">
         <div
           class="
@@ -15,7 +15,7 @@
           <div class="brand">
             <b-img src="/media/logos/logo.svg" height="35px"> </b-img>
             <span class="m-0 mt-1 text-main-light" style="font-size:20px;"
-              >اسم الشركة</span
+              >Car Parts </span
             >
           </div>
 
@@ -27,7 +27,7 @@
               "
               variant="transparent"
             >
-              <fa icon="fas fa-bars" class="text-primary"></fa>
+              <fa icon="fas fa-bars" class="text-light"></fa>
             </b-button>
           </div>
         </div>

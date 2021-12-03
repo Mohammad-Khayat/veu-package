@@ -1,36 +1,55 @@
 <template>
-<b-container fluid>
-  <div class="admin-navbar py-3 ">
-    <div class="admin-nav shadow-sm flex-between ">
-      <div class="  w-100 px-2  align-center ">
-        <h6>tool box</h6>
-      </div>
+  <b-container fluid>
+    <div class="admin-navbar py-3 ">
+      <div class="admin-nav shadow-sm flex-between ">
+        <div class="  w-100 px-2  align-center ">
+          <b-button
+            variant="transparent "
+            @click="changeLang"
+            class="text-main-dark"
+            >{{ lang }}</b-button
+          >
+        </div>
 
-      <div class="   align-center px-2 py-2 main-light">
-        <b-avatar rounded="circle"></b-avatar>
-        <b-nav-item-dropdown
-          class="p-0 text-main-dark"
-          text="اسم المستخدم"
-          right
-        >
-          <b-dropdown-item href="">الملف الشخصي</b-dropdown-item>
-          <b-dropdown-item href="">تسجيل الخروج</b-dropdown-item>
-        </b-nav-item-dropdown>
+        <div class="   align-center px-2 py-2 main-light">
+          <b-avatar rounded="circle"></b-avatar>
+          <b-nav-item-dropdown
+            class="p-0 text-main-dark"
+            text="اسم المستخدم"
+            right
+          >
+            <b-dropdown-item href="">الملف الشخصي</b-dropdown-item>
+            <b-dropdown-item href="">تسجيل الخروج</b-dropdown-item>
+          </b-nav-item-dropdown>
+        </div>
       </div>
     </div>
-  </div>
-</b-container>
-
+  </b-container>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      lang: "AR",
+    };
+  },
+  methods: {
+    changeLang() {
+      if (this.lang == "AR") this.lang = "EN";
+      else this.lang = "AR";
+
+      document.getElementsByTagName("html")[0].dir =
+        this.lang == "AR" ? "rtl" : "ltr";
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 .admin-navbar {
-  .admin-nav{
-  border-radius: 20px;
+  .admin-nav {
+    border-radius: 20px;
   }
   .b-nav-dropdown {
     a {

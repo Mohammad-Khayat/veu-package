@@ -1,46 +1,34 @@
 <template>
-<div id="app">
-
-<router-view>
-
-</router-view>
-</div>
+  <div id="app">
+    <router-view> </router-view>
+  </div>
 </template>
 
 <script>
 export default {
-  components: {
-  },
+  components: {},
 };
 </script>
 
 <style lang="scss">
-body{
-}
-*{
-  direction: rtl;
-  text-align: right;
-}
-.full-screen{
-
+.full-screen {
   height: calc(100vh - 56px);
   flex-direction: column;
 }
-small{
+small {
   cursor: pointer;
 }
-label{
-  color:#777;
+label {
+  color: #777;
 }
-::placeholder{
-  font-size:12px ;
+::placeholder {
+  font-size: 12px;
 }
-@import url('https://fonts.googleapis.com/css2?family=Tajawal&display=swap');
-*{
-  font-family: 'Tajawal', sans-serif !important;
+@import url("https://fonts.googleapis.com/css2?family=Tajawal&display=swap");
+* {
+  font-family: "Tajawal", sans-serif !important;
 }
-body{
+body {
   background-color: #fafafa !important;
 }
 </style>
-

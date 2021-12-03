@@ -48,24 +48,26 @@ export default {
   }
 
   .main {
-    height: 100vh;
-    overflow: auto;
     position: absolute;
     width: calc(100% - 270px);
-    left: 0;
+    right: 0;
     top: 0;
     transition: 0.3s;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     background-color: #fafafa !important;
-    height: 100%;
-     min-height: 100vh;
+    min-height: 100vh;
+    @media (max-width: 768px) {
+      position: fixed;
+
+      min-height: auto !important;
+      height: 90%;
+      border-radius: 0 0 20px 20px;
+      width: 100vw;
+      overflow-y: scroll;
+    }
     z-index: 10;
     box-shadow: 15px 0 15px -14px #111 !important;
-
-
-
-
   }
   .main-fluid {
     width: calc(100% - 78px);

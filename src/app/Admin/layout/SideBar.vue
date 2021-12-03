@@ -1,9 +1,9 @@
 <template>
-<div class="bg-dark-theme sidebar-background">
-  <div class="side admin-sidebar    " id :class="{ closed: closed }">
-    <div class="py-4">
-      <div
-        class="
+  <div class="bg-dark-theme sidebar-background">
+    <div class="side admin-sidebar    " id :class="{ closed: closed }">
+      <div class="py-1 ">
+        <div
+          class="
               side-header
               d-flex
               align-items-center
@@ -11,45 +11,46 @@
               m-auto
               px-3
             "
-      >
-        <div class="brand">
-          <b-img src="/media/logos/logo.svg" height="35px"> </b-img>
-          <span class="m-0 mt-1 text-main-light" style="font-size:20px;">اسم الشركة</span>
-        </div>
-
-        <div class="drawer">
-          <b-button
-            @click="
-              closed = !closed;
-              $emit('toggle', closed);
-            "
-            variant="transparent"
-          >
-            <fa icon="fas fa-bars" class="text-primary"></fa>
-          </b-button>
-        </div>
-      </div>
-    </div>
-
-    <ul class="side-bar-list p-0 m-0">
-      <div class="folder" v-for="(value, key) in navLinks" :key="key">
-        <label class="w-100 px-4">{{ key }}</label>
-        <b-nav-item
-          v-for="item in value"
-          :key="item.name"
-          :to="item.path"
-          class="my-2"
         >
-          <fa :icon="item.icon" class="ml-2 text-g1" />
-          <span :class="'text-g1'">
-            {{ item.name }}
-          </span>
-        </b-nav-item>
-      </div>
-    </ul>
-  </div>
-</div>
+          <div class="brand">
+            <b-img src="/media/logos/logo.svg" height="35px"> </b-img>
+            <span class="m-0 mt-1 text-main-light" style="font-size:20px;"
+              >اسم الشركة</span
+            >
+          </div>
 
+          <div class="drawer">
+            <b-button
+              @click="
+                closed = !closed;
+                $emit('toggle', closed);
+              "
+              variant="transparent"
+            >
+              <fa icon="fas fa-bars" class="text-primary"></fa>
+            </b-button>
+          </div>
+        </div>
+      </div>
+
+      <ul class="side-bar-list p-0 m-0">
+        <div class="folder" v-for="(value, key) in navLinks" :key="key">
+          <label class="w-100 px-4">{{ key }}</label>
+          <b-nav-item
+            v-for="item in value"
+            :key="item.name"
+            :to="item.path"
+            class="my-2"
+          >
+            <fa :icon="item.icon" class="mr-2 text-g1" />
+            <span :class="'text-g1'">
+              {{ item.name }}
+            </span>
+          </b-nav-item>
+        </div>
+      </ul>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -69,25 +70,71 @@ export default {
 </script>
 
 <style lang="scss">
-.sidebar-background{
-    display: flex;
-    align-items: center;
-z-index: 0;
-width: 100%;
-min-height: 100vh;
+.sidebar-background {
+  display: flex;
+  align-items: center;
+  z-index: 0;
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
 }
 @import "@/assets/sass/_custom.scss";
 .admin-sidebar {
   transition: 0.3s ease-in-out;
   position: fixed;
   height: 94vh !important;
-   width: 270px;
+  width: 270px;
+  @media (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    z-index: 50;
+    width: 100%;
+    height: 10% !important;
+    bottom: 0;
+    .side-bar-list label,
+    .side-header {
+      display: none !important;
+    }
+    .side-bar-list {
+      padding: 0 !important;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row !important;
+      .folder {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap;
+      }
+      .nav-link {
+        display: flex;
+        justify-content: center;
+        svg {
+          margin: 0 !important;
+        }
+        span {
+          display: none;
+        }
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        &::after {
+          display: none;
+        }
+      }
+      .router-link-active {
+        background-color: $primary !important;
+      }
+    }
+  }
+  left: 0;
   opacity: 0.8;
   backdrop-filter: blur(5px);
   background-color: $darkTheme;
   overflow: auto;
   overflow-x: hidden;
-   label {
+  label {
     white-space: nowrap;
     font-size: 12px;
     height: 20px;
@@ -115,24 +162,23 @@ min-height: 100vh;
     flex-wrap: nowrap;
     align-items: center;
     &:hover {
-  background-color: rgba(0, 0, 0, 0.205) !important;
+      background-color: rgba(0, 0, 0, 0.205) !important;
     }
     span {
       transition: 0.3s;
     }
-
   }
   .router-link-active {
-  background-color: rgba(0, 0, 0, 0.205) !important;
-     &::after{
-  position: absolute;
-    content: "";
-    height: 50%;
-    width: 3px;
-    border-radius: 25px;
-    background-color: $primary;
-    left: 20px;
-    box-shadow: 0 0 5px 1px $primary;
+    background-color: rgba(0, 0, 0, 0.205) !important;
+    &::after {
+      position: absolute;
+      content: "";
+      height: 50%;
+      width: 3px;
+      border-radius: 25px;
+      background-color: $primary;
+      right: 20px;
+      box-shadow: 0 0 5px 1px $primary;
     }
   }
   .side-header {
@@ -140,20 +186,19 @@ min-height: 100vh;
   }
 }
 .brand {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    white-space: nowrap;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
   transition: 0.3s;
 }
-.drawer svg{
-transition: .5s;
+.drawer svg {
+  transition: 0.5s;
 }
 .closed {
   overflow-x: hidden;
   width: 78px;
   .brand {
-
     opacity: 0;
     transform: translateX(150px);
     visibility: hidden;
@@ -169,10 +214,10 @@ transition: .5s;
     white-space: nowrap;
   }
   .router-link-active {
-      &::after{
-    display: none;
-    height: 0;
-    width: 0;
+    &::after {
+      display: none;
+      height: 0;
+      width: 0;
     }
   }
   .nav-item {
@@ -202,12 +247,10 @@ transition: .5s;
     width: 5px;
     transition: 0.5s;
   }
-    &::-webkit-scrollbar {
-  }
- .drawer svg{
 
- transform: rotate(180deg);
- }
+  .drawer svg {
+    transform: rotate(180deg);
+  }
   &::-webkit-scrollbar-thumb {
     background: $primary;
     border-radius: 20px;
